@@ -1,0 +1,38 @@
+<section>
+
+<h3 id="about-me">About Myself</h3>
+
+<div class="face-lockup"> 
+  <div class="face-img"></div>
+  <div class="icon-one">{% include icons/iconone.html %}</div>
+  <div class="icon-two">{% include icons/icontwo.html %}</div>
+  <div class="icon-three">{% include icons/iconthree.html %}</div>
+  <div class="icon-four">{% include icons/iconfour.html %}</div>
+</div>
+
+<div class="blurb">
+<p><strong> {{ site.data.settings.blurb | markdownify }} </p>
+</div>
+
+
+{% if site.data.settings.skills %}
+
+<div class="skill-lockup"> 
+
+{% for skill in site.data.settings.skills %}
+
+  <div class="skill-unit">
+    <div class="skill-label">{{ skill.name }}</div>
+    <div class="skill-icon skill-{{ skill.value }}">  
+    {% for i in (1..10) %}
+    <span></span> 
+    {% endfor %}
+    </div>
+  </div> 
+{% endfor %}
+  
+</div>
+
+{% endif %}
+
+</section>
